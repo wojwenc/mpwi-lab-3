@@ -9,21 +9,6 @@ namespace Lab3.Classes {
         private readonly int[] values = { 0, 1, 2, 3, 4 };
         private List<Interval> intervals;
 
-        // struct for storing intervals and coresponding probabilities
-        class Interval {
-            public double probablility;
-            public int lowerValueBound;
-            public int upperValueBound;
-            public int count;
-
-            public Interval(double probablility, int lowerValueBound, int upperValueBound) {
-                this.probablility = probablility;
-                this.lowerValueBound = lowerValueBound;
-                this.upperValueBound = upperValueBound;
-                count = 0;
-            }
-        }
-
         public QuantileFunctionGenerator() {
             intervals = new List<Interval>();
         }
@@ -79,7 +64,7 @@ namespace Lab3.Classes {
 
             // iterate over all generated values
             foreach (double val in generatedValues) {
-                // count how many values are in each interval
+                // if value is in an interval increment counter
                 foreach (Interval interval in intervals) {
                     if (val > interval.lowerValueBound && val <= interval.upperValueBound) {
                         interval.count++;
