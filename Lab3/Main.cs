@@ -4,18 +4,20 @@ using System;
 namespace Lab3 {
     class RandomNumberGenerators {
         static void Main() {
-            Console.WriteLine("Quantile Function Generator");
-            QuantileFunctionGenerator algoritm1 = new QuantileFunctionGenerator();
+            Console.WriteLine("\n\nElimination Generator");
+            EliminationGenerator algoritm1 = new EliminationGenerator();
             algoritm1
-                .InitializeGenerator()
                 .GenerateValues()
                 .PrintValues();
 
-            Console.WriteLine("\n\nElimination Generator");
-            EliminationGenerator algoritm2 = new EliminationGenerator();
+            Console.WriteLine("Quantile Function Generator");
+            QuantileFunctionGenerator algoritm2 = new QuantileFunctionGenerator();
             algoritm2
+                .InitializeGenerator()
                 .GenerateValues()
-                .PrintValues();
+                .PrintValues()
+                .CalcDistribution()
+                .PrintDistribution();
         }
     }
 }

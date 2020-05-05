@@ -35,5 +35,6 @@ namespace Lab3.Classes {
         public new EliminationGenerator PrintValues() {
             return (EliminationGenerator)base.PrintValues();
         }
+
     }
 }
